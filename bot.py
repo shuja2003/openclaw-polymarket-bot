@@ -2,12 +2,11 @@ import os
 import time
 import asyncio
 from telegram import Bot
+from telegram.request import HTTPXRequest
 from weather import get_shanghai_weather
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
-
-from telegram.request import HTTPXRequest
 
 request = HTTPXRequest(connect_timeout=30, read_timeout=30)
 bot = Bot(token=BOT_TOKEN, request=request)
@@ -32,4 +31,5 @@ while True:
 
     print("Alert sent:", temp)
 
-    time.sleep(60) 
+    time.sleep(60)
+            
