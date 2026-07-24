@@ -3,7 +3,7 @@ import requests
 def get_shanghai_weather():
     url = "https://api.open-meteo.com/v1/forecast?latitude=31.23&longitude=121.47&daily=temperature_2m_max&timezone=Asia%2FShanghai"
 
-    data=request.get(url, timeout=10).json()
+    data=requests.get(url, timeout=10).json()
 
     temp = data["daily"]["temperature_2m_max"][0]
 
