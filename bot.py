@@ -7,7 +7,10 @@ from weather import get_shanghai_weather
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
-bot = Bot(token=BOT_TOKEN)
+from telegram.request import HTTPXRequest
+
+request = HTTPXRequest(connect_timeout=30, read_timeout=30)
+bot = Bot(token=BOT_TOKEN, request=request)
 
 print("🌡 Shanghai Weather Alert Bot started...")
 
