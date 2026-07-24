@@ -26,4 +26,4 @@ while True:
 
     print("Alert sent:", temp)
 
-    time.sleep(3600)
+    time.sleep(60)
