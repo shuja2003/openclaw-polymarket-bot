@@ -1,5 +1,6 @@
 import os
 import time
+import asyncio
 from telegram import Bot
 from weather import get_shanghai_weather
 
@@ -19,14 +20,12 @@ while True:
         f"Polymarket Weather Bot is watching."
     )
 
-    import asyncio
-
-asyncio.run(
-    bot.send_message(
-        chat_id=CHAT_ID,
-        text=message
+    asyncio.run(
+        bot.send_message(
+            chat_id=CHAT_ID,
+            text=message
+        )
     )
-)
 
     print("Alert sent:", temp)
 
