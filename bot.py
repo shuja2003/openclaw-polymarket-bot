@@ -19,10 +19,14 @@ while True:
         f"Polymarket Weather Bot is watching."
     )
 
+    import asyncio
+
+asyncio.run(
     bot.send_message(
         chat_id=CHAT_ID,
         text=message
     )
+)
 
     print("Alert sent:", temp)
 
